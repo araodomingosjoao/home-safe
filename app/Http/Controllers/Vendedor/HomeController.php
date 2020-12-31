@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Vendedor;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Houses;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -27,26 +29,13 @@ class HomeController extends Controller
     {
         return view('Vendedor/home');
     }
-    public function create(Request $request)
+
+    public function update(Request $request )
     {
-        $this->validate($request , [
-            'localizacao', ['requerid', 'string'],
-            'preco_venda', ['requerid', 'string'],
-            'preco_alugel', ['requerid', 'string'],
-            'detalhes', ['requerid', 'text'],
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:50' , 'min:10'],
+            'email' => ['required', 'string', 'unique:users'],
+            'telefone' => ['required', 'string', 'unique:users', 'min:9']
         ]);
-
-        $credentials = [
-            'user_id' => Auth::user()->id,
-            'localização' => $request->localizacao,
-            'preçoVenda' => $request->preco_venda,
-            'preçoAlugel' => $request->preco_alugel,
-            'detalhes' => $request->detalhes
-        ];
-
-        if(Houses::create($credentials)){
-            return redirect()->back();
-        }
-
     }
 }

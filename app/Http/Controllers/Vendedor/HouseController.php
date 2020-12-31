@@ -24,7 +24,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        //
+        return view("Vendedor.formCadHouse");
     }
 
     /**
