@@ -40,20 +40,12 @@ Route::group([],function () {
     })->name("site.sobre");
 });
 
- Route::group(['prefix' => 'vendedor'], function () {
 
-      //Route Home
-     Route::get('/', 'Vendedor\HomeController@index')->name('vendedor.home');
-     Route::put('/update', 'Vendedor\HomeController@update')->name('vendedor.home.update');
-
-      //Route House
-     Route::get('/cad-house', 'Vendedor\HouseController@create')->name('vendedor.house.form');
-     Route::post('/cad-house/create', 'Vendedor\HouseController@strore')->name('vendedor.house.create');
-
- });
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('reset-password', function () {
+    return view('auth.password-reset');
+})->name('password-reset');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('dashboard', 'AdminController@index')->name('admin.dashboard');
@@ -64,10 +56,6 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth'
 });
 
 Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['auth', 'seller']], function () {
-
     Route::get('dashboard', 'SellerController@index')->name('seller.dashboard');
-    // Route::put('update', 'SellerController@update')->name('seller.update');
-    // Route::get('create-', 'SellerController@create')->name('vendedor.house.form');
-    // Route::post('cad-house/create', 'SellerController@strore')->name('vendedor.house.create');
-
 });
+
