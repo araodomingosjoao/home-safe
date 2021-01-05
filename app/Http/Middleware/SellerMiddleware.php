@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
-class VendedorMiddleware
+class SellerMiddleware
 {
     /**
      * Handle an incoming request.

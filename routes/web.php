@@ -40,19 +40,34 @@ Route::group([],function () {
     })->name("site.sobre");
 });
 
-Route::group(['prefix' => 'vendedor'], function () {
+ Route::group(['prefix' => 'vendedor'], function () {
 
-    // Route Home
-    Route::get('/', 'Vendedor\HomeController@index')->name('vendedor.home');
-    Route::put('/update', 'Vendedor\HomeController@update')->name('vendedor.home.update');
+      //Route Home
+     Route::get('/', 'Vendedor\HomeController@index')->name('vendedor.home');
+     Route::put('/update', 'Vendedor\HomeController@update')->name('vendedor.home.update');
 
-    // Route House
-    Route::get('/cad-house', 'Vendedor\HouseController@create')->name('vendedor.house.form');
-    Route::post('/cad-house/create', 'Vendedor\HouseController@strore')->name('vendedor.house.create');
+      //Route House
+     Route::get('/cad-house', 'Vendedor\HouseController@create')->name('vendedor.house.form');
+     Route::post('/cad-house/create', 'Vendedor\HouseController@strore')->name('vendedor.house.create');
 
-});
+ });
 Auth::routes();
 
-
-
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('dashboard', 'AdminController@index')->name('admin.dashboard');
+});
+
+Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () {
+    Route::get('dashboard', 'UserController@index')->name('user.dashboard');
+});
+
+Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['auth', 'seller']], function () {
+
+    Route::get('dashboard', 'SellerController@index')->name('seller.dashboard');
+    // Route::put('update', 'SellerController@update')->name('seller.update');
+    // Route::get('create-', 'SellerController@create')->name('vendedor.house.form');
+    // Route::post('cad-house/create', 'SellerController@strore')->name('vendedor.house.create');
+
+});
