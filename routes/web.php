@@ -48,14 +48,20 @@ Route::get('reset-password', function () {
 })->name('password-reset');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('dashboard', 'AdminController@index')->name('admin.dashboard');
+    Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
+    // Route::get('dashboard/profile', 'DashboardController@showProfile')->name('admin.dashboard.profile');
+
 });
 
 Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () {
-    Route::get('dashboard', 'UserController@index')->name('user.dashboard');
+    Route::get('dashboard', 'DashboardController@index')->name('user.dashboard');
 });
 
 Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['auth', 'seller']], function () {
-    Route::get('dashboard', 'SellerController@index')->name('seller.dashboard');
+    Route::get('dashboard', 'DashboardController@index')->name('seller.dashboard');
+    Route::get('dashboard/profile', 'DashboardController@showProfile')->name('seller.dashboard.profile');
+    Route::put('dashboard/profile/update', 'SellerController@update')->name('seller.update');
+    Route::put('dashboard/profile/update/password', 'SellerController@updatePassword')->name('seller.update_password');
+
 });
 
