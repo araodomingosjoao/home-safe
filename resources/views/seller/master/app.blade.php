@@ -40,7 +40,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+      <a class="nav-link" href="{{ route('seller.dashboard')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Pagina Inicial</span></a>
       </li>
