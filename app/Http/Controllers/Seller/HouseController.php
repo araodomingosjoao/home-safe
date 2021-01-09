@@ -14,7 +14,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        //
+        return view('seller.house.home');
     }
 
     /**
@@ -24,7 +24,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        //
+        return view('seller.house.create');
     }
 
     /**

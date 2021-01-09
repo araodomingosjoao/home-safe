@@ -58,10 +58,17 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'middleware' => ['auth'
 });
 
 Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['auth', 'seller']], function () {
+    //Route DashboardController
     Route::get('dashboard', 'DashboardController@index')->name('seller.dashboard');
     Route::get('dashboard/profile', 'DashboardController@showProfile')->name('seller.dashboard.profile');
+
+    //Route SellerController
     Route::put('dashboard/profile/update', 'SellerController@update')->name('seller.update');
     Route::put('dashboard/profile/update/password', 'SellerController@updatePassword')->name('seller.update_password');
+
+    //Route HouseController
+    Route::get('dashboard/house', 'HouseController@index')->name('seller.house');
+    Route::get('dashboard/house/create', 'HouseController@create')->name('seller.house.create');
 
 });
 
