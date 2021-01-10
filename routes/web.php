@@ -69,6 +69,8 @@ Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['a
     //Route HouseController
     Route::get('dashboard/house', 'HouseController@index')->name('seller.house');
     Route::get('dashboard/house/create', 'HouseController@create')->name('seller.house.create');
+    Route::post('dashboard/house/create/store', 'HouseController@store')->name('seller.house.store');
+
 
 });
 

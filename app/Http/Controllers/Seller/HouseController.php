@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Seller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\House;
 
 class HouseController extends Controller
 {
@@ -35,7 +37,23 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request , [
+            'location' => ['required', 'string'],
+            'description' => ['required', 'string']
+        ]);
+
+        $house = new House();
+        $house->user_id = Auth::user()->id;
+        $house->location = $request->location;
+        $house->price_sale = $request->price_sale;
+        $house->price_rent = $request->price_rent;
+        $house->description = $request->description;
+
+        if($house->save()){
+            return redirect()->back()->with(['message' => 'Sucesso ao Cadastrar']);
+        }else{
+            return redirect()->back()->with(['message' => 'Erro ao Cadastro']);
+        }
     }
 
     /**

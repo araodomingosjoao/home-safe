@@ -17,11 +17,11 @@ class CreateHousesTable extends Migration
 
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('localização');
-            $table->string('PreçoVenda');
-            $table->string('PreçoAlugel');
-            $table->text('Detlhes');
-            $table->string('src/img');
+            $table->string('location');
+            $table->string('price_sale')->nullable();
+            $table->string('price_rent')->nullable();
+            $table->text('description');
+            $table->string('road_img')->nullable();
             $table->timestamps();
 
             $table->foreign("user_id")->references('id')->on('users')->onDelete('CASCADE');

@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Houses extends Model
+class House extends Model
 {
    protected $table = "houses";
 
    protected $fillable = [
-       'user_id', 'localização', 'preçoVenda', 'preçoAlugel', 'detalhes',
+       'user_id', 'location', 'price_sale', 'price_rent', 'description',
    ];
 
 }
