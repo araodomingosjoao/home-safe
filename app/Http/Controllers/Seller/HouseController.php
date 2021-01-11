@@ -39,7 +39,10 @@ class HouseController extends Controller
     {
         $this->validate($request , [
             'location' => ['required', 'string'],
-            'description' => ['required', 'string']
+            'description' => ['required', 'string'],
+            'type_house' => ['required', 'string'],
+            'status_house' => ['required', 'string'],
+
         ]);
 
         $house = new House();
@@ -47,6 +50,8 @@ class HouseController extends Controller
         $house->location = $request->location;
         $house->price_sale = $request->price_sale;
         $house->price_rent = $request->price_rent;
+        $house->type = $request->type_house;
+        $house->status = $request->status_house;
         $house->description = $request->description;
 
         if($house->save()){

@@ -12,8 +12,10 @@
   <title>SB Admin 2 - Blank</title>
 
   {{-- Start Gentella Tamplate --}}
+    <link href="{{ asset('gentella/vendors/dropzone/dist/min/dropzone.min.css')}}" rel="stylesheet">
     <link href="{{ asset('gentella/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('gentella/build/css/custom.min.css')}}" rel="stylesheet">
+
    {{-- End Gentella Tamplate --}}
 
    <!-- Custom fonts for this template-->
@@ -314,13 +316,14 @@
 
   {{-- Start Gentella Tamplate --}}
     <!-- FastClick -->
-    <script src="{{ asset('gentella/vendors/fastclick/lib/fastclick.js')}}"></script>
+    {{-- <script src="{{ asset('gentella/vendors/fastclick/lib/fastclick.js')}}"></script> --}}
     <!-- jQuery Smart Wizard -->
     <script src="{{ asset('gentella/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}"></script>
+    <!-- Dropzone-->
+    <script src="{{ asset('gentella/vendors/dropzone/dist/min/dropzone.min.js')}}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('gentella/build/js/custom.min.js')}}"></script>
   {{-- End Gentella Tamplate --}}
-
   <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
 
 </body>

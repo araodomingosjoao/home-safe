@@ -21,6 +21,8 @@ class CreateHousesTable extends Migration
             $table->string('price_sale')->nullable();
             $table->string('price_rent')->nullable();
             $table->text('description');
+            $table->string('type');
+            $table->string('status');
             $table->string('road_img')->nullable();
             $table->timestamps();
 
