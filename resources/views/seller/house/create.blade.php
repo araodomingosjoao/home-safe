@@ -4,32 +4,7 @@
 
 @section('content')
     {{-- <div class="container">
-        @if (session('message'))
-            <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
 
-                <strong>{{ session('message') }}!</strong>
-            </div>
-        @endif
-
-        @if ($errors->any())
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                <div>
-                    @foreach ($errors->all() as $error)
-                        <p class="text-danger">
-                            {{ $error }}
-                        </p>
-                    @endforeach
-                </div>
-            </div>
-        @endif
         <div class="row justify-content-center">
 
             <div class="col-md-8">
@@ -65,6 +40,32 @@
     </div> --}}
     <h2>Cadastrar uma casa</h2>
     <div class="container py-3">
+        @if (session('message'))
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+
+                <strong>{{ session('message') }}!</strong>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <div>
+                    @foreach ($errors->all() as $error)
+                        <p class="text-danger">
+                            {{ $error }}
+                        </p>
+                    @endforeach
+                </div>
+            </div>
+        @endif
         <form action="{{ route('seller.house.store') }}" method="POST">
             @csrf
             <div class="col-md-6">

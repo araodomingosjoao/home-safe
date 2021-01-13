@@ -16,7 +16,9 @@ class HouseController extends Controller
      */
     public function index()
     {
-        return view('seller.house.home');
+        $houses = House::orderBy('id')->get();
+
+        return view('seller.house.index', compact('houses'));
     }
 
     /**
