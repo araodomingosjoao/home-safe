@@ -23,7 +23,6 @@ class CreateHousesTable extends Migration
             $table->text('description');
             $table->string('type');
             $table->string('status');
-            $table->string('road_img')->nullable();
             $table->timestamps();
 
             $table->foreign("user_id")->references('id')->on('users')->onDelete('CASCADE');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\House;
+use App\HouseImage;
 
 class HouseController extends Controller
 {
@@ -44,6 +45,7 @@ class HouseController extends Controller
             'description' => ['required', 'string'],
             'type_house' => ['required', 'string'],
             'status_house' => ['required', 'string'],
+            'images' => ['required']
 
         ]);
 
@@ -56,7 +58,19 @@ class HouseController extends Controller
         $house->status = $request->status_house;
         $house->description = $request->description;
 
+
         if($house->save()){
+            for ($i=0; $i < count($request->allFiles()['images']); $i++) {
+
+                $file = $request->allFiles()['images'][$i];
+
+                $houseImages = new HouseImage();
+                $houseImages->house_id = $house->id;
+                $houseImages->path = $file->store('house_images/'.Auth::user()->name. '/'. $house->id);
+                $houseImages->save();
+                unset($houseImages);
+            }
+
             return redirect()->back()->with(['message' => 'Sucesso ao Cadastrar']);
         }else{
             return redirect()->back()->with(['message' => 'Erro ao Cadastro']);
@@ -80,9 +94,9 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(House $house)
     {
-        //
+        return view("seller.house.edit", compact('house'));
     }
 
     /**
@@ -92,9 +106,25 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request, [
+            'location' => ['required', 'string'],
+            'price_sale' => ['required', 'string'],
+            'price_rent' => ['required', 'string'],
+        ]);
+
+        $house = new House();
+
+        $house->type = $request->type;
+        $house->status = $request->status;
+        $house->location = $request->location;
+        $house->price_sale = $request->price_sale;
+        $house->price_rent = $request->price_rent;
+
+        if($house->update()){
+            return redirect()->route('seller.house');
+        }
     }
 
     /**
