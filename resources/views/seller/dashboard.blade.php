@@ -6,6 +6,8 @@
 @endsection --}}
 
 @section('content')
+<div class="container">
+
     <h1 class="h3 mb-4 text-gray-800">{{ Auth::user()->name}}</h1>
     <div class="row">
 
@@ -87,4 +89,5 @@
         </div>
       </div>
 
+</div>
 @endsection

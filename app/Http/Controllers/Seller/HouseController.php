@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\House;
 use App\HouseImage;
+use App\User;
+use App\Models\Cropper;
 
 class HouseController extends Controller
 {
@@ -17,7 +19,15 @@ class HouseController extends Controller
      */
     public function index()
     {
-        $houses = House::orderBy('id')->get();
+        // $houses = House::orderBy('id')->get();
+        // $houseImages = HouseImage::where('house_id', 1)->get();
+
+        $user = Auth::user();
+        $houses = $user->houses()->get();
+        // $images = $user->houses()->images()->get();
+
+        // var_dump($images);
+        // return;
 
         return view('seller.house.index', compact('houses'));
     }
@@ -47,7 +57,7 @@ class HouseController extends Controller
             'status_house' => ['required', 'string'],
             'images' => ['required']
 
-        ]);
+            ]);
 
         $house = new House();
         $house->user_id = Auth::user()->id;
@@ -58,22 +68,19 @@ class HouseController extends Controller
         $house->status = $request->status_house;
         $house->description = $request->description;
 
-
         if($house->save()){
             for ($i=0; $i < count($request->allFiles()['images']); $i++) {
-
                 $file = $request->allFiles()['images'][$i];
-
                 $houseImages = new HouseImage();
                 $houseImages->house_id = $house->id;
-                $houseImages->path = $file->store('house_images/'.Auth::user()->name. '/'. $house->id);
+                $houseImages->path = $file->store('house_images' .DIRECTORY_SEPARATOR. Auth::user()->name. DIRECTORY_SEPARATOR. $house->id);
                 $houseImages->save();
                 unset($houseImages);
             }
 
-            return redirect()->back()->with(['message' => 'Sucesso ao Cadastrar']);
+            return redirect()->route('seller.house', compact('cropper'))->with(['message' => 'Sucesso ao Cadastrar']);
         }else{
-            return redirect()->back()->with(['message' => 'Erro ao Cadastro']);
+            return redirect()->back(compact('cropper'))->with(['message' => 'Erro ao Cadastro']);
         }
     }
 
@@ -96,7 +103,7 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        return view("seller.house.edit", compact('house'));
+        return view("seller.house.edit", compact('house', 'images'));
     }
 
     /**
