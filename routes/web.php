@@ -63,17 +63,17 @@ Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['a
     Route::get('dashboard/profile', 'DashboardController@showProfile')->name('seller.dashboard.profile');
 
     //Route SellerController
-    Route::put('dashboard/profile/update', 'SellerController@update')->name('seller.update');
-    Route::put('dashboard/profile/update/password', 'SellerController@updatePassword')->name('seller.update_password');
+    Route::put('profile/update', 'SellerController@update')->name('seller.update');
+    Route::put('profile/update/password', 'SellerController@updatePassword')->name('seller.update_password');
 
     //Route HouseController
-    Route::get('dashboard/house', 'HouseController@index')->name('seller.house');
-    Route::get('dashboard/house/create', 'HouseController@create')->name('seller.house.create');
-    Route::post('dashboard/house/create/store', 'HouseController@store')->name('seller.house.store');
-    Route::get('dashboard/house/edit/{house}', 'HouseController@edit')->name('seller.house.edit');
-    Route::put('dashboard/house/edit/update/{id}', 'HouseController@update')->name('seller.house.update');
-    Route::post('dashboard/house/destroy{house}', 'HouseController@destroy')->name('seller.house.destroy');
-    Route::get('dashboard/house/destroy/{image}', 'HouseController@destroyImage')->name('seller.house.destroy.image');
+    Route::get('house', 'HouseController@index')->name('seller.house');
+    Route::get('house/create', 'HouseController@create')->name('seller.house.create');
+    Route::post('house/create/store', 'HouseController@store')->name('seller.house.store');
+    Route::get('house/edit/{house}', 'HouseController@edit')->name('seller.house.edit');
+    Route::put('house/edit/update/{id}', 'HouseController@update')->name('seller.house.update');
+    Route::post('house/destroy{house}', 'HouseController@destroy')->name('seller.house.destroy');
+    Route::get('house/destroy/{image}', 'HouseController@destroyImage')->name('seller.house.destroy.image');
 
 });
 
