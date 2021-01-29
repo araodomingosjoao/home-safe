@@ -71,7 +71,9 @@ Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['a
     Route::get('dashboard/house/create', 'HouseController@create')->name('seller.house.create');
     Route::post('dashboard/house/create/store', 'HouseController@store')->name('seller.house.store');
     Route::get('dashboard/house/edit/{house}', 'HouseController@edit')->name('seller.house.edit');
-    Route::put('dashboard/house/edit/update', 'HouseController@update')->name('seller.house.update');
+    Route::put('dashboard/house/edit/update/{id}', 'HouseController@update')->name('seller.house.update');
     Route::post('dashboard/house/destroy{house}', 'HouseController@destroy')->name('seller.house.destroy');
+    Route::get('dashboard/house/destroy/{image}', 'HouseController@destroyImage')->name('seller.house.destroy.image');
+
 });
 

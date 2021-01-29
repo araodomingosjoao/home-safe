@@ -3,11 +3,11 @@
 @section('title', 'Lista de casas')
 
 @section('content')
-<div class="site-section site-section-sm ">
+<div class="site-section site-section-sm">
     <div class="container">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Listagem de Casa</h1>
+            <h1 class="h3 mb-0 text-gray-800">Lista de casa</h1>
             <a href="{{ route('seller.house.create') }}" class="btn btn-success" data-toggle="tooltip"
                 title="Cadastrar uma casa" data-placement="left">
                 <span class="fa fa-plus"></span>
@@ -59,14 +59,18 @@
                                 <div class="col-12">
                                     <h2 class="h4 text-black mb-3">Galeria</h2>
                                 </div>
-                                @foreach ($house->images as $image)
+                                @forelse ($house->images as $image)
                                     <div class="col-sm-6 col-md-4 col-lg-3">
                                         <a href="{{ env('APP_URL') }}/storage/{{ $image->path }}"
                                             class="image-popup gal-item"><img
                                                 src="{{ env('APP_URL') }}/storage/{{ $image->path }}" alt=""
                                                 class="img-fluid"></a>
                                     </div>
-                                @endforeach
+                                    @empty
+                                        <p class="text-bold">
+                                            Nenhuma imagem disponivel!
+                                        </p>
+                                @endforelse
                             </div>
                             <form class="mt-4 text-right" action="{{ route('seller.house.destroy', $house->id) }}"
                                 method="post">
@@ -95,7 +99,6 @@
                             </form>
                         </div>
                     </div>
-
                 @endforeach
             </div>
         </div>

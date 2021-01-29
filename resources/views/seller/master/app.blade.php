@@ -64,7 +64,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item" href="{{ route('seller.house')}}">Ver</a>
             <a class="collapse-item" href="{{ route('seller.house.create')}}">Cadastar</a>
-            <a class="collapse-item" href="#">Actualizar</a>
           </div>
         </div>
       </li>

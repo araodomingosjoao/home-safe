@@ -19,15 +19,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        // $houses = House::orderBy('id')->get();
-        // $houseImages = HouseImage::where('house_id', 1)->get();
-
         $user = Auth::user();
         $houses = $user->houses()->get();
-        // $images = $user->houses()->images()->get();
-
-        // var_dump($images);
-        // return;
 
         return view('seller.house.index', compact('houses'));
     }
@@ -56,7 +49,6 @@ class HouseController extends Controller
             'type_house' => ['required', 'string'],
             'status_house' => ['required', 'string'],
             'images' => ['required']
-
             ]);
 
         $house = new House();
@@ -78,9 +70,9 @@ class HouseController extends Controller
                 unset($houseImages);
             }
 
-            return redirect()->route('seller.house', compact('cropper'))->with(['message' => 'Sucesso ao Cadastrar']);
+            return redirect()->route('seller.house')->with(['message' => 'Sucesso ao Cadastrar']);
         }else{
-            return redirect()->back(compact('cropper'))->with(['message' => 'Erro ao Cadastro']);
+            return redirect()->back()->with(['message' => 'Erro ao Cadastro']);
         }
     }
 
@@ -103,7 +95,7 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        return view("seller.house.edit", compact('house', 'images'));
+        return view("seller.house.edit", compact('house'));
     }
 
     /**
@@ -113,7 +105,7 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'location' => ['required', 'string'],
@@ -121,16 +113,21 @@ class HouseController extends Controller
             'price_rent' => ['required', 'string'],
         ]);
 
-        $house = new House();
+        $house = House::findOrFail($id);
+        $update = $house->fill($request->all());
 
-        $house->type = $request->type;
-        $house->status = $request->status;
-        $house->location = $request->location;
-        $house->price_sale = $request->price_sale;
-        $house->price_rent = $request->price_rent;
-
-        if($house->update()){
-            return redirect()->route('seller.house');
+        if($update->update()){
+            if(! $request->allFiles() == null){
+                for ($i=0; $i < count($request->allFiles()['images']); $i++) {
+                    $file = $request->allFiles()['images'][$i];
+                    $houseImages = new HouseImage();
+                    $houseImages->house_id = $house->id;
+                    $houseImages->path = $file->store('house_images' .DIRECTORY_SEPARATOR. Auth::user()->name. DIRECTORY_SEPARATOR. $house->id);
+                    $houseImages->save();
+                    unset($houseImages);
+                }
+            }
+            return redirect()->back()->with(['message' => 'Dados da casa actualizado com sucesso']);
         }
     }
 
@@ -142,6 +139,16 @@ class HouseController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+    }
+
+    public function destroyImage(HouseImage $image)
+    {
+        $cropper = new Cropper('../storage/');
+        $cropper->flush($image->path);
+
+        if($image->delete()){
+            return redirect()->back();
+        }
     }
 }
