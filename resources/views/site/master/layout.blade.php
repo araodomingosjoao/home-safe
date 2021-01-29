@@ -27,7 +27,7 @@
         <div class="container py-1">
           <div class="row align-items-center">
             <div class="col-8 col-md-8 col-lg-4">
-            <h1 class="mb-0"><a href="{{ route('site.home') }}" class="text-white h2 mb-0"><strong>HomeSafe<span class="text-danger">.</span></strong></a></h1>
+            <h1 class="mb-0"><a href="{{ route('site') }}" class="text-white h2 mb-0"><strong>HomeSafe<span class="text-danger">.</span></strong></a></h1>
             </div>
             <div class="col-4 col-md-4 col-lg-8">
               <nav class="site-navigation text-right text-md-right" role="navigation">
@@ -35,11 +35,11 @@
                 <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
-                  <li class="{{ Route::current()->getName() === 'site.home' ? 'active' : '' }}"><a href="{{ route('site.home')}} ">Home</a></li>
-                  <li class="{{ Route::current()->getName() === 'site.vendas' ? 'active' : '' }}"><a href="{{ route('site.vendas') }}">Vendas</a></li>
-                  <li class="{{ Route::current()->getName() === 'site.alugadas' ? 'active' : '' }}"><a href="{{ route('site.alugadas') }} ">Alugar</a></li>
-                  <li class="{{ Route::current()->getName() === 'site.sobre' ? 'active' : '' }}"><a href="{{ route('site.sobre') }} ">Sobre</a></li>
-                  <li class="{{ Route::current()->getName() === 'site.contactos' ? 'active' : '' }}"><a href="{{ route('site.contactos') }} ">Contactos</a></li>
+                  <li class="{{ Route::current()->getName() === 'site' ? 'active' : '' }}"><a href="{{ route('site')}} ">Home</a></li>
+                  <li class="{{ Route::current()->getName() === 'site.buy' ? 'active' : '' }}"><a href="{{ route('site.buy') }}">Vendas</a></li>
+                  <li class="{{ Route::current()->getName() === 'site.rent' ? 'active' : '' }}"><a href="{{ route('site.rent') }} ">Alugar</a></li>
+                  <li class="{{ Route::current()->getName() === 'site.about' ? 'active' : '' }}"><a href="{{ route('site.about') }} ">Sobre</a></li>
+                  <li class="{{ Route::current()->getName() === 'site.contact' ? 'active' : '' }}"><a href="{{ route('site.contact') }} ">Contactos</a></li>
                 </ul>
               </nav>
             </div>
@@ -99,9 +99,9 @@
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                <li><a href="{{ route('site.home') }}">Home</a></li>
-                  <li><a href="route('site.vendas') }}">Vendas</a></li>
-                  <li><a href="route('site.alugadas') }}">Alugada</a></li>
+                <li><a href="{{ route('site') }}">Home</a></li>
+                  <li><a href="route('site.buy') }}">Vendas</a></li>
+                  <li><a href="route('site.rent') }}">Alugada</a></li>
                 </ul>
               </div>
             </div>

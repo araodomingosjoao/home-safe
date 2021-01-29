@@ -10,34 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group([],function () {
-    Route::get('/', function () {
-        return view('site.home');
-    })->name("site.home");
+Route::group(['namespace' => 'Site'], function () {
+    Route::get('/', 'SiteController@index')->name('site');
+    Route::get('/buy', 'SiteController@buy')->name('site.buy');
+    Route::get('/rent', 'SiteController@rent')->name('site.rent');
+    Route::get('/list', 'SiteController@list')->name('site.list');
+    Route::get('/description', 'SiteController@description')->name('site.description');
+    Route::get('/contact', 'SiteController@contact')->name('site.contact');
+    Route::get('/about', 'SiteController@about')->name('site.about');
 
-    Route::get('/vendas', function () {
-        return view('site.buy');
-    })->name("site.vendas");
-
-    Route::get('/contactos', function () {
-        return view('site.contact');
-    })->name("site.contactos");
-
-    Route::get('/detalhes-casa', function () {
-        return view('site.property-details');
-    })->name("site.detalhesCasa");
-
-    Route::get('/alugadas', function () {
-        return view('site.rent');
-    })->name("site.alugadas");
-
-    Route::get('/lista-casa', function () {
-        return view('site.view-list');
-    })->name("site.listaCasa");
-
-    Route::get('/sobre', function () {
-        return view('site.about');
-    })->name("site.sobre");
 });
 
 

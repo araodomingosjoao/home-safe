@@ -58,7 +58,7 @@
             <div class="row mb-5">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -66,7 +66,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">Jardim de Rosa</a></h2>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">Jardim de Rosa</a></h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>
                                 Jardim de Rosa Talatona</span>
                             <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -94,7 +94,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -102,7 +102,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite active"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">871 Crenshaw Blvd</a></h2>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">871 Crenshaw Blvd</a></h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New
                                 York Ave, Warners Bay, NSW 2282</span>
                             <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -130,7 +130,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -138,7 +138,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">853 S Lucerne Blvd</a>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">853 S Lucerne Blvd</a>
                             </h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S
                                 Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
@@ -167,7 +167,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -175,7 +175,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">Jardim de Rosa</a></h2>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">Jardim de Rosa</a></h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>
                                 Jardim de Rosa Talatona</span>
                             <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -203,7 +203,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -211,7 +211,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">871 Crenshaw Blvd</a></h2>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">871 Crenshaw Blvd</a></h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New
                                 York Ave, Warners Bay, NSW 2282</span>
                             <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -239,7 +239,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -247,7 +247,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">853 S Lucerne Blvd</a>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">853 S Lucerne Blvd</a>
                             </h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S
                                 Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
@@ -276,7 +276,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -284,7 +284,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">Jardim de Rosa</a></h2>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">Jardim de Rosa</a></h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>
                                 Jardim de Rosa Talatona</span>
                             <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -312,7 +312,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -320,7 +320,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">871 Crenshaw Blvd</a></h2>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">871 Crenshaw Blvd</a></h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New
                                 York Ave, Warners Bay, NSW 2282</span>
                             <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -348,7 +348,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
-                        <a href="{{ route('site.detalhesCasa') }}" class="property-thumbnail">
+                        <a href="{{ route('site.description') }}" class="property-thumbnail">
                             <div class="offer-type-wrap">
                                 <span class="offer-type bg-success">Esta sendo alugada</span>
                             </div>
@@ -356,7 +356,7 @@
                         </a>
                         <div class="p-4 property-body">
                             <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                            <h2 class="property-title"><a href="{{ route('site.detalhesCasa') }}">853 S Lucerne Blvd</a>
+                            <h2 class="property-title"><a href="{{ route('site.description') }}">853 S Lucerne Blvd</a>
                             </h2>
                             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S
                                 Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
