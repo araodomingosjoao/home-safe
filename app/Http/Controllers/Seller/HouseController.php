@@ -65,7 +65,7 @@ class HouseController extends Controller
                 $file = $request->allFiles()['images'][$i];
                 $houseImages = new HouseImage();
                 $houseImages->house_id = $house->id;
-                $houseImages->path = $file->store('house_images' .DIRECTORY_SEPARATOR. Auth::user()->name. DIRECTORY_SEPARATOR. $house->id);
+                $houseImages->path = $file->store('house_images\\'. Auth::user()->name .'\\'. $house->id);
                 $houseImages->save();
                 unset($houseImages);
             }

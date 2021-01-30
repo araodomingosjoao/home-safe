@@ -4,12 +4,18 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
+use App\House;
+use App\Models\Cropper;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        return view('site.home');
+        $houses = House::all();
+        $cropper = new Cropper('../storage/app/public/cache/house_images/'. Auth::user()->name);
+        return view('site.home', compact('houses', 'cropper'));
     }
     public function buy()
     {

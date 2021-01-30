@@ -50,10 +50,6 @@
                             <h2 class="h4 text-black">Descrição da casa</h2>
                             <p>
                                 {{ $house->description }}
-                                {{ $house->description }}
-                                {{ $house->description }}
-                                {{ $house->description }}
-
                             </p>
                             <div class="row no-gutters mt-2">
                                 <div class="col-12">

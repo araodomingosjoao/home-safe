@@ -55,21 +55,22 @@
       <div class="container">
 
         <div class="row mb-5">
+          @foreach ($houses as $house)
+
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="property-entry h-100">
               <a href="{{ route('site.description')}}" class="property-thumbnail">
                 <div class="offer-type-wrap">
-                  <span class="offer-type bg-dark">Esta sendo vendida</span>
-                  <span class="offer-type bg-success">Esta sendo alugada</span>
+                    <span class="offer-type bg-dark">{{ $house->status}}</span>
                 </div>
-                <img src="{{asset('site/assets/images/img_1.jpg')}}" alt="Image" class="img-fluid">
+                <img src="{{ env('APP_STORAGE').$house->images->first()->path }}" alt="Image" class="img-fluid">
               </a>
               <div class="p-4 property-body">
                 <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">Jardim de Rosa</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> Jardim de Rosa Talatona</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
+              <h2 class="property-title"><a href="{{ route('site.description')}}">{{ $house->location}}</a></h2>
+                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>{{ $house->location}}</span>
+              <strong class="property-price text-primary mb-3 d-block text-success">{{ $house->price_sale}} KZ</strong>
+                {{-- <ul class="property-specs-wrap mb-3 mb-lg-0">
                   <li>
                     <span class="property-specs">Beds</span>
                     <span class="property-specs-number">2 <sup>+</sup></span>
@@ -85,296 +86,16 @@
                     <span class="property-specs-number">7,000</span>
 
                   </li>
-                </ul>
-
+                </ul> --}}
+                <p>
+                    {{ $house->description }}
+                    
+                </p>
               </div>
             </div>
           </div>
+          @endforeach
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-dark">Esta sendo vendida</span>
-                  <span class="offer-type bg-success">Esta sendo alugada</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_2.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite active"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Em processamento</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_3.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-dark">Esta sendo vendida</span>
-                  <span class="offer-type bg-success">Esta sendo alugada</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_4.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">Jardim de Rosa</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> Jardim de Rosa Talatona</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">7,000</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-dark">Esta sendo vendida</span>
-                  <span class="offer-type bg-success">Esta sendo alugada</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_5.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Em processamento</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_6.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-dark">Esta sendo vendida</span>
-                  <span class="offer-type bg-success">Esta sendo alugada</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_7.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">Jardim de Rosa</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> Jardim de Rosa Talatona</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">7,000</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-dark">Esta sendo vendida</span>
-                  <span class="offer-type bg-success">Esta sendo alugada</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_8.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Em processamento</span>
-                </div>
-                <img src="{{asset('site/assets/images/img_1.jpg')}}" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="{{ route('site.description')}}">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
