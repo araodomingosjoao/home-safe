@@ -56,9 +56,9 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
-              <span class="d-inline-block bg-success text-white px-3 mb-3 property-offer-type rounded">Esta sendo alugada</span>
-              <h1 class="mb-2">Luanda -- Benfica</h1>
-              <p class="mb-5"><strong class="h2 text-success font-weight-bold">50.000KZ</strong></p>
+              <span class="d-inline-block bg-danger text-white px-3 mb-3 property-offer-type rounded">Esta sendo alugada</span>
+              <h1 class="mb-2">Benfica</h1>
+              <p class="mb-5"><strong class="h2 text-white font-weight-bold">50.000KZ</strong></p>
             </div>
           </div>
         </div>
@@ -68,9 +68,9 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
-              <span class="d-inline-block bg-danger text-white px-3 mb-3 property-offer-type rounded">Esta sendo vendida</span>
-              <h1 class="mb-2">Benguela -- Lubito</h1>
-              <p class="mb-5"><strong class="h2 text-success font-weight-bold">100.000KZ</strong></p>
+                <span class="d-inline-block bg-danger text-white px-3 mb-3 property-offer-type rounded">Esta sendo vendida</span>
+                <h1 class="mb-2">Kilamba</h1>
+              <p class="mb-5"><strong class="h2 text-white font-weight-bold">500.000KZ</strong></p>
             </div>
           </div>
         </div>
