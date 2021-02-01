@@ -14,8 +14,7 @@ class SiteController extends Controller
     public function index()
     {
         $houses = House::all();
-        $cropper = new Cropper('../storage/app/public/cache/house_images/'. Auth::user()->name);
-        return view('site.home', compact('houses', 'cropper'));
+        return view('site.home', compact('houses'));
     }
     public function buy()
     {
@@ -25,9 +24,10 @@ class SiteController extends Controller
     {
         return view('site.contact');
     }
-    public function description()
+    public function description($id)
     {
-        return view('site.property-details');
+        $house = House::findOrFail($id);
+        return view('site.property-details', compact('house'));
     }
     public function rent()
     {
