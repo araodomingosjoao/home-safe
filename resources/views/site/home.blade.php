@@ -59,7 +59,7 @@
 
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="property-entry h-100">
-              <a href="{{ route('site.description')}}" class="property-thumbnail">
+              <a href="{{ route('site.description', [$house->id] )}}" class="property-thumbnail">
                 <div class="offer-type-wrap">
                     <span class="offer-type bg-black text-center">{{ $house->type}}</span>
                     <span class="offer-type bg-danger text-center">{{ $house->status}}</span>
@@ -69,9 +69,19 @@
               </a>
               <div class="p-4 property-body">
                 <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-              <h2 class="property-title"><a href="{{ route('site.description')}}">{{ $house->location}}</a></h2>
+              <h2 class="property-title"><a href="{{ route('site.description', [$house->id] )}}">{{ $house->location}}</a></h2>
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>{{ $house->location}}</span>
-              <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_sale}} KZ</strong>
+                    @if($house->status == 'Venda')
+                        <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_sale}} KZ</strong>
+                    @endif
+
+                    @if($house->status == 'Alugel')
+                        <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_rent}} KZ</strong>
+                    @endif
+
+                    @if($house->status == 'Venda e Alugel')
+                        <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_sale}} KZ // {{ $house->price_rent }} KZ</strong>
+                    @endif
                 {{-- <ul class="property-specs-wrap mb-3 mb-lg-0">
                   <li>
                     <span class="property-specs">Beds</span>
