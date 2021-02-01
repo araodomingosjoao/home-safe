@@ -18,7 +18,13 @@ class SiteController extends Controller
     }
     public function buy()
     {
-        return view('site.buy');
+        $houses_buy = House::where('status','Venda')->get();
+        return view('site.buy', compact('houses_buy'));
+    }
+    public function rent()
+    {
+        $houses_rent = House::where('status','Alugel')->get();
+        return view('site.rent', compact('houses_rent'));
     }
     public function contact()
     {
@@ -28,10 +34,6 @@ class SiteController extends Controller
     {
         $house = House::findOrFail($id);
         return view('site.property-details', compact('house'));
-    }
-    public function rent()
-    {
-        return view('site.rent');
     }
     public function list()
     {
