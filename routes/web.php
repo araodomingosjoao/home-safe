@@ -15,7 +15,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/buy', 'SiteController@buy')->name('site.buy');
     Route::get('/rent', 'SiteController@rent')->name('site.rent');
     Route::get('/list', 'SiteController@list')->name('site.list');
-    Route::get('/description', 'SiteController@description')->name('site.description');
+    Route::get('/description/{id}', 'SiteController@description')->name('site.description');
     Route::get('/contact', 'SiteController@contact')->name('site.contact');
     Route::get('/about', 'SiteController@about')->name('site.about');
 
