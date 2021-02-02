@@ -96,7 +96,7 @@
                                             src="{{ env('APP_URL') }}/storage/{{ $image->path }}" alt=""
                                             class="img-fluid"></a>
                                     <div class="col-md-16 mt-1 mb-1">
-                                    <a href="{{ route('seller.house.destroy.image', $image)}}" class="btn btn-success btn" data-toggle="tooltip"
+                                    <a href="{{ route('seller.house.destroy.image', $image)}}" id="delete_image" class="btn btn-success btn" data-toggle="tooltip"
                                             title="Remover">
                                             <span class="fa fa-trash-alt"></span>
                                         </a>

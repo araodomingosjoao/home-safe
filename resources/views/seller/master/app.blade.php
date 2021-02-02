@@ -303,7 +303,6 @@
     <script src="{{ asset('site/assets/js/script.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
     <script src="{{ asset('js/script.js')}}"></script>
-
 </body>
 
 </html>

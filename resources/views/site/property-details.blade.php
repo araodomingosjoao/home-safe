@@ -50,7 +50,7 @@
                                 </ul> --}}
                             </div>
                         </div>
-                        <div class="row mb-5">
+                        <div class="row mb-2">
                             <div class="col-md-6 col-lg-6 text-center py-3">
                                 <span class="d-inline-block text-black mb-0 caption-text">Tipo de casa</span>
                                 <strong class="d-block">{{ $house->type }}</strong>
@@ -76,6 +76,45 @@
                 </div>
                 <div class="col-lg-4">
 
+                    <div class="row">
+
+    <div class="col-md-6 col-lg-12 mb-4">
+    <div class="property-entry h-100">
+      <div class="p-4 property-body">
+        <h2 class="property-title text-black">Informação do Propetario</h2>
+        <p>{{ $house->user->name }}</p>
+        <p>{{ $house->user->email }}</p>
+        <p>{{ $house->user->tel }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-lg-12 mb-4">
+        <div class="property-entry h-100">
+          <div class="p-4 property-body">
+              <h2 class="property-title text-black">Contactar o Propetario</h2>
+              <form action="" class="form-contact-agent">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="text" id="phone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="phone" class="btn btn-primary" value="Entrar em contacto">
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
                     {{-- <div class="bg-white widget ">
 
                         <h3 class="h4 text-black widget-title mb-3">Contact Agent</h3>

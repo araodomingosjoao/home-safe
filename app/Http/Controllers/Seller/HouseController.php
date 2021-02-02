@@ -148,7 +148,7 @@ class HouseController extends Controller
         $cropper->flush($image->path);
 
         if($image->delete()){
-            return redirect()->back();
+             return redirect()->back();
         }
     }
 }

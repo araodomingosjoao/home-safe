@@ -72,16 +72,18 @@
               <h2 class="property-title"><a href="{{ route('site.description', [$house->id] )}}">{{ $house->location}}</a></h2>
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>{{ $house->location}}</span>
                     @if($house->status == 'Venda')
-                        <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_sale}} KZ</strong>
+                        <strong class="property-price text-primary d-block text-black">{{ $house->price_sale}} KZ</strong>
                     @endif
 
                     @if($house->status == 'Alugel')
-                        <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_rent}} KZ</strong>
+                        <strong class="property-price text-primary d-block text-black">{{ $house->price_rent}} KZ</strong>
                     @endif
 
                     @if($house->status == 'Venda e Alugel')
-                        <strong class="property-price text-primary mb-3 d-block text-black">{{ $house->price_sale}} KZ // {{ $house->price_rent }} KZ</strong>
+                        <strong class="property-price text-primary d-block text-black">{{ $house->price_sale}} KZ // {{ $house->price_rent }} KZ</strong>
                     @endif
+                    <span class="property-specs mb-4">Preço negociavel</span>
+
                 {{-- <ul class="property-specs-wrap mb-3 mb-lg-0">
                   <li>
                     <span class="property-specs">Beds</span>
