@@ -81,10 +81,10 @@
     <div class="col-md-6 col-lg-12 mb-4">
     <div class="property-entry h-100">
       <div class="p-4 property-body">
-        <h2 class="property-title text-black">Informação do Propetario</h2>
-        <p>{{ $house->user->name }}</p>
-        <p>{{ $house->user->email }}</p>
-        <p>{{ $house->user->tel }}</p>
+        <h2 class="property-title text-black mb-4">Informação do Propetario</h2>
+        <p><i class="fas fa-user mr-3"></i> {{ $house->user->name }}</p>
+        <p><i class="fas fa-envelope mr-3"></i> {{ $house->user->email }}</p>
+        <p><i class="fas fa-phone mr-3"></i> {{ $house->user->phone }}</p>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ asset('site/assets/css/style.css') }}">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('site/assets/fonts/icomoon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('site/assets/fonts/flaticon/font/flaticon.css') }}">
     <title>HomeSafe » @yield('title')</title>

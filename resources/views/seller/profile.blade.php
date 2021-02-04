@@ -5,7 +5,7 @@
 @section('content')
 <div class="col-md-9 " style="margin:0 auto">
         @if (session('message'))
-        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 <span class="sr-only">Close</span>
@@ -32,13 +32,13 @@
         </div>
     @endif
 
-    <div class="card">
+    <div class="card mb-5">
       <div class="card-header p-2">
         <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link active" href="#activity" data-toggle="tab">Dados do Usuario</a>
+            <li class="nav-item mb-2">
+              <a class="nav-link active-bg-dark" href="#activity" data-toggle="tab">Dados do Usuario</a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item mb-2">
               <a class="nav-link" href="#timeline" data-toggle="tab">Alterar Senha</a>
             </li>
         </ul>
@@ -63,7 +63,7 @@
                         <input type="text" class="form-control" name="phone" placeholder="Telefone">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                        <button type="submit" class="btn btn-dark">Actualizar</button>
                     </div>
                 </div>
             </form>
@@ -87,7 +87,7 @@
                         <input type="password" class="form-control" name="password_confirmation">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                        <button type="submit" class="btn btn-dark">Actualizar</button>
                     </div>
 
                     <div class="form-group">
