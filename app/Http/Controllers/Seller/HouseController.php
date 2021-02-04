@@ -139,7 +139,10 @@ class HouseController extends Controller
      */
     public function destroy($id)
     {
-
+        $house = House::findOrFail($id);
+        if ($house->delete()) {
+            return redirect()->back()->with(['message' => 'Casa desabilitada']);
+        }
     }
 
     public function destroyImage(HouseImage $image)

@@ -6,7 +6,7 @@
     <div class="container py-2">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Actualizar casa</h1>
-            <a href="{{ route('seller.house') }}" class="btn btn-success" data-toggle="tooltip" title="Voltar"
+            <a href="{{ route('seller.house') }}" class="btn btn-dark" data-toggle="tooltip" title="Voltar"
                 data-placement="left">
                 <span class="fa fa-arrow-left"></span>
             </a>
@@ -90,13 +90,13 @@
                         </div>
 
                         @forelse ($house->images as $image)
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 mb-5">
                                     <a href="{{ env('APP_URL') }}/storage/{{ $image->path }}"
                                         class="image-popup gal-item"><img
                                             src="{{ env('APP_URL') }}/storage/{{ $image->path }}" alt=""
                                             class="img-fluid"></a>
                                     <div class="col-md-16 mt-1 mb-1">
-                                    <a href="{{ route('seller.house.destroy.image', $image)}}" id="delete_image" class="btn btn-success btn" data-toggle="tooltip"
+                                    <a href="{{ route('seller.house.destroy.image', $image)}}" id="delete_image" class="btn btn-danger" data-toggle="tooltip"
                                             title="Remover">
                                             <span class="fa fa-trash-alt"></span>
                                         </a>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <div class="form-group col-lg-9 col-md-9">
-                        <button type="submit" class="btn btn-success">Actualizar</button>
+                        <button type="submit" class="btn btn-dark">Actualizar</button>
                     </div>
                 </form>
             </div>

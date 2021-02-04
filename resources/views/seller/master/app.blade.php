@@ -14,7 +14,9 @@
     <link href="{{ asset('css/app.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('site/assets/css/style.css') }}">
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('site/assets/fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/assets/fonts/flaticon/font/flaticon.css') }}">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> --}}
 
    <!-- Custom styles for this template-->
    <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
@@ -27,7 +29,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion " id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion " id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -100,7 +102,7 @@
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Procurar" aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-success" type="button">
+                <button class="btn btn-dark" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
@@ -135,7 +137,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
-                <span class="badge badge-success badge-counter">3+</span>
+                <span class="badge badge-dark badge-counter">3+</span>
               </a>
               <!-- Dropdown - Alerts -->
               {{-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
@@ -155,7 +157,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
-                    <div class="icon-circle bg-success">
+                    <div class="icon-circle bg-dark">
                       <i class="fas fa-donate text-white"></i>
                     </div>
                   </div>
@@ -184,7 +186,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-success badge-counter">7</span>
+                <span class="badge badge-dark badge-counter">7</span>
               </a>
               <!-- Dropdown - Messages -->
               {{-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
@@ -194,7 +196,7 @@
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
                     <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
+                    <div class="status-indicator bg-dark"></div>
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
@@ -224,7 +226,7 @@
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
                     <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
+                    <div class="status-indicator bg-dark"></div>
                   </div>
                   <div>
                     <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
@@ -300,9 +302,9 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
     <script src="{{ asset('js/init.js')}}"></script>
-    <script src="{{ asset('site/assets/js/script.js') }}"></script>
+    {{-- <script src="{{ asset('js/script.js')}}"></script>
+    <script src="{{ asset('site/assets/js/script.js') }}"></script> --}}
     <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
-    <script src="{{ asset('js/script.js')}}"></script>
 </body>
 
 </html>

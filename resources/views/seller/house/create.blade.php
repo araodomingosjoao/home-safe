@@ -6,7 +6,7 @@
     <div class="container py-2">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Cadastrar casa</h1>
-            <a href="{{ route('seller.house') }}" class="btn btn-success" data-toggle="tooltip" title="Voltar"
+            <a href="{{ route('seller.house') }}" class="btn btn-dark" data-toggle="tooltip" title="Voltar"
                 data-placement="left">
                 <span class="fa fa-arrow-left"></span>
             </a>
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="form-group col-lg-9 col-md-9">
-                            <button type="submit" class="btn btn-success">Cadastrar a casa</button>
+                            <button type="submit" class="btn btn-dark">Cadastrar a casa</button>
                         </div>
                 </form>
             </div>
