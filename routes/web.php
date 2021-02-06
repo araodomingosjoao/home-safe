@@ -21,6 +21,9 @@ Route::group(['namespace' => 'Site'], function () {
 
 });
 
+Route::group(['namespace' => 'Client'], function () {
+    Route::post('client/store', 'ClientController@store')->name('client.store');
+});
 
 Auth::routes();
 
@@ -55,6 +58,6 @@ Route::group(['prefix' => 'seller', 'namespace' => 'Seller', 'middleware' => ['a
     Route::put('house/edit/update/{id}', 'HouseController@update')->name('seller.house.update');
     Route::delete('house/destroy/{house}', 'HouseController@destroy')->name('seller.house.destroy');
     Route::get('house/destroy/{image}', 'HouseController@destroyImage')->name('seller.house.destroy.image');
-
 });
+
 

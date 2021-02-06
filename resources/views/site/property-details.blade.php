@@ -94,21 +94,24 @@
         <div class="property-entry h-100">
           <div class="p-4 property-body">
               <h2 class="property-title text-black">Contactar o Propetario</h2>
-              <form action="" class="form-contact-agent">
+                <form action="{{ route('client.store') }}" method="POST" class="form-contact-agent">
+                @csrf
+                <input type="hidden" name="house_id" value="{{ $house->id }}">
                 <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" class="form-control">
+                    <label for="client_name">Nome</label>
+                    <input type="text" id="client_name" name="client_name" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control">
+                    <label for="client_email">Email</label>
+                    <input type="email" id="client_email" name="client_email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Telefone</label>
-                    <input type="text" id="phone" class="form-control">
+                    <label for="client_phone">Telefone</label>
+                    <input type="text" id="client_phone" name="client_phone" class="form-control">
                 </div>
+                <input type="hidden" name="id_propetary">
                 <div class="form-group">
-                    <input type="submit" id="phone" class="btn btn-primary" value="Entrar em contacto">
+                    <input type="submit" class="btn btn-primary" value="Entrar em contacto">
                 </div>
             </form>
           </div>
