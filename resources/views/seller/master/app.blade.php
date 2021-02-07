@@ -3,17 +3,16 @@
 use App\House;
 use App\Notification;
 
-$is_notifications = Notification::get()->count();
 $notifications = [];
 $houses = auth()->user()->houses;
 $notifications_count = 0;
 
 foreach ($houses as $house) {
-    $notifications_count += Notification::whereHouseId($house->id)->get()->count();
+    $notifications_count += Notification::whereHouseIdAndVizualized($house->id, 'false')->get()->count();
     $notifications[] = Notification::whereHouseId($house->id)->orderByDesc('id')->get();
 }
-
-$notifications = collect($notifications)->collapse()->take(2);
+// dd($notifications_count);
+$notifications = collect($notifications)->collapse()->take(5);
 
 @endphp
 
@@ -188,29 +187,38 @@ $notifications = collect($notifications)->collapse()->take(2);
             </li> --}}
 
             <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
+            <li class="nav-item dropdown no-arrow mx-1" id="panel_messages">
                     <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-envelope fa-fw"></i>
                         <!-- Counter - Messages -->
-                    <span class="badge badge-danger badge-counter">{{ $notifications_count}}</span>
+                    <span class="badge badge-danger badge-counter" >{{ $notifications_count}}</span>
                 </a>
                 <!-- Dropdown - Messages -->
                 <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                     <h6 class="dropdown-header text-center">
                     MENSAGENS
                     </h6>
-                    @foreach ($notifications as $notification)
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                                <div class="status-indicator bg-dark"></div>
-                            </div>
-                            <div class="font-weight-bold" data-toggle="modal" data-target="#description_client">
-                            <div class="text-truncate">{{ $notification->client->name}}</div>
-                                <div class="small text-gray-500">{{ $notification->client->email }}</div>
-                            </div>
-                        </a>
-                    @endforeach
+                    @if($notifications_count == '0')
+                        <div class="text-center mt-2 mb-2">
+                            <strong>Nenhuma notificação</strong>
+                        </div>
+                    @endif
+
+                    @if(!$notifications_count == '0')
+                        @foreach ($notifications as $notification)
+                            <a class="dropdown-item d-flex align-items-center" data-toggle="modal" data-target="#description_client" href="#" onclick="getMessage('{{$notification->client->message}}')">
+                                <div class="dropdown-list-image mr-3">
+                                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                                    <div class="status-indicator bg-danger"></div>
+                                </div>
+                                <div class="font-weight-bold" data-toggle="modal" data-target="#description_client">
+                                    <div class="text-truncate">{{ $notification->client->name}}</div>
+                                    <div class="small text-gray-500">{{ $notification->client->email }}</div>
+                                </div>
+                                <p id="client_message" style="display: none">{{ $notification->client->message }}</p>
+                            </a>
+                        @endforeach
+                    @endif
                         <a class="dropdown-item text-center small text-gray-500" href="#">Ver mais mensagens</a>
                     </div>
             </li>
@@ -225,7 +233,7 @@ $notifications = collect($notifications)->collapse()->take(2);
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p></p>
+                            <p class="cliente_message"></p>
                         </div>
                     </div>
                 </div>

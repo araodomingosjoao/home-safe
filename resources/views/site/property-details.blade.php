@@ -97,19 +97,27 @@
                 <form action="{{ route('client.store') }}" method="POST" class="form-contact-agent">
                 @csrf
                 <input type="hidden" name="house_id" value="{{ $house->id }}">
+
                 <div class="form-group">
                     <label for="client_name">Nome</label>
                     <input type="text" id="client_name" name="client_name" class="form-control">
                 </div>
+
                 <div class="form-group">
                     <label for="client_email">Email</label>
                     <input type="email" id="client_email" name="client_email" class="form-control">
                 </div>
+
                 <div class="form-group">
                     <label for="client_phone">Telefone</label>
                     <input type="text" id="client_phone" name="client_phone" class="form-control">
                 </div>
-                <input type="hidden" name="id_propetary">
+
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea class="form-control" name="client_message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Entrar em contacto">
                 </div>

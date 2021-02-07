@@ -19,6 +19,7 @@ class CreateNotificationsTable extends Migration
             $table->foreign('client_id')->references('id')->on('clients');
             $table->unsignedBigInteger('house_id');
             $table->foreign('house_id')->references('id')->on('houses');
+            $table->string('vizualized')->default('false');
             $table->timestamps();
         });
     }

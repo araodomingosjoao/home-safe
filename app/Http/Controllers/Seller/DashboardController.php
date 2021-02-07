@@ -14,14 +14,14 @@ class DashboardController extends Controller
     {
         $n_house = Auth::user()->houses()->get()->count();
 
-        $is_notifications = Notification::get()->count();
-        $notifications = Notification::orderBy('id', 'desc')->find(Auth::user()->houses);
-        foreach ($notifications as $notification) {
-            $id_house_notification = $notification->house_id;
-            $house = House::find($id_house_notification);
-        }
+         $is_notifications = Notification::get()->count();
+        // $notifications = Notification::orderBy('id', 'desc')->find(Auth::user()->houses);
+        // foreach ($notifications as $notification) {
+        //     $id_house_notification = $notification->house_id;
+        //     $house = House::find($id_house_notification);
+        // }
 
-        return view('seller.dashboard', compact('house', 'n_house', 'notifications', 'is_notifications'));
+        return view('seller.dashboard', compact('n_house', 'is_notifications'));
     }
 
     public function showProfile()
