@@ -21,11 +21,11 @@
                                     <strong class="text-black h1">{{ $house->price_sale }}KZ</strong>
                                 @endif
 
-                                @if ($house->status == 'Alugel')
+                                @if ($house->status == 'Aluguel')
                                     <strong class="text-black h1">{{ $house->price_rent }}KZ</strong>
                                 @endif
 
-                                @if ($house->status == 'Venda e Alugel')
+                                @if ($house->status == 'Venda e Aluguel')
                                     <strong class="text-black h1">{{ $house->price_sale }}KZ // {{ $house->price_rent }} KZ</strong>
                                 @endif
                             </div>

@@ -6,16 +6,17 @@
     <div class="site-section site-section-sm pb-0">
       <div class="container">
         <div class="row">
-          <form class="form-search col-md-12 bg-dark" style="margin-top: -100px;">
+          <form action="{{ route('house.search')}}" method="POST" class="form-search col-md-12 bg-dark" style="margin-top: -100px;" >
+            @csrf
             <div class="row  align-items-end">
               <div class="col-md-3">
                 <label for="list-types">Tipo de casa</label>
                 <div class="select-wrap">
                   <span class="icon icon-arrow_drop_down"></span>
-                  <select name="list-types" id="list-types" class="form-control d-block rounded-0">
-                    <option value="">Condominio</option>
-                    <option value="">Apartamento</option>
-                    <option value="">Casa normal</option>
+                  <select name="type_house" id="list-types" class="form-control d-block rounded-0">
+                    <option>Condominio</option>
+                    <option>Apartamento</option>
+                    <option>Casa normal</option>
                   </select>
                 </div>
               </div>
@@ -23,9 +24,10 @@
                 <label for="offer-types">Opções de venda</label>
                 <div class="select-wrap">
                   <span class="icon icon-arrow_drop_down"></span>
-                  <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                    <option value="">Casa a venda</option>
-                    <option value="">Aluger</option>
+                  <select name="status_house" id="offer-types" class="form-control d-block rounded-0">
+                    <option>Venda e Alugada</option>
+                    <option>Venda</option>
+                    <option>Aluguel</option>
                   </select>
                 </div>
               </div>
@@ -33,12 +35,12 @@
                 <label for="select-city">Selecione a cidade</label>
                 <div class="select-wrap">
                   <span class="icon icon-arrow_drop_down"></span>
-                  <select name="select-city" id="select-city" class="form-control d-block rounded-0">
-                    <option value="">Luanda</option>
-                    <option value="">Benguela</option>
-                    <option value="">Malanje</option>
-                    <option value="">Huila</option>
-                    <option value="">Namibia</option>
+                  <select name="city" id="select-city" class="form-control d-block rounded-0">
+                    <option>Luanda</option>
+                    <option>Benguela</option>
+                    <option>Malanje</option>
+                    <option>Huila</option>
+                    <option>Namibia</option>
                   </select>
                 </div>
               </div>
@@ -75,11 +77,11 @@
                         <strong class="property-price text-primary d-block text-black">{{ $house->price_sale}} KZ</strong>
                     @endif
 
-                    @if($house->status == 'Alugel')
+                    @if($house->status == 'Aluguel')
                         <strong class="property-price text-primary d-block text-black">{{ $house->price_rent}} KZ</strong>
                     @endif
 
-                    @if($house->status == 'Venda e Alugel')
+                    @if($house->status == 'Venda e Aluguel')
                         <strong class="property-price text-primary d-block text-black">{{ $house->price_sale}} KZ // {{ $house->price_rent }} KZ</strong>
                     @endif
                     <span class="property-specs mb-4">Preço negociavel</span>
@@ -109,7 +111,6 @@
             </div>
           </div>
           @endforeach
-
         </div>
         <div class="row">
           <div class="col-md-12 text-center">

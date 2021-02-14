@@ -32,7 +32,7 @@ class HomeController extends Controller
         $this->validate($request , [
             'localizacao', ['requerid', 'string'],
             'preco_venda', ['requerid', 'string'],
-            'preco_alugel', ['requerid', 'string'],
+            'preco_Aluguel', ['requerid', 'string'],
             'detalhes', ['requerid', 'text'],
         ]);
 
@@ -40,7 +40,7 @@ class HomeController extends Controller
             'user_id' => Auth::user()->id,
             'localização' => $request->localizacao,
             'preçoVenda' => $request->preco_venda,
-            'preçoAlugel' => $request->preco_alugel,
+            'preçoAluguel' => $request->preco_Aluguel,
             'detalhes' => $request->detalhes
         ];
 

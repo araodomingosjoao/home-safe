@@ -18,6 +18,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/description/{id}', 'SiteController@description')->name('site.description');
     Route::get('/contact', 'SiteController@contact')->name('site.contact');
     Route::get('/about', 'SiteController@about')->name('site.about');
+    Route::post('/search', 'SiteController@search')->name('house.search');
 
 });
 

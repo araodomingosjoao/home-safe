@@ -19,8 +19,8 @@
 
 
                 <div class="row form-group">
-                    <label>Preço de Alugel </label>
-                    <input type="text" class="form-control" name="preco_alugel">
+                    <label>Preço de Aluguel </label>
+                    <input type="text" class="form-control" name="preco_Aluguel">
                 </div>
 
                 <div class="row form-group">

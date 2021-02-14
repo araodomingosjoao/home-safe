@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 use App\House;
-use App\Models\Cropper;
 
 class SiteController extends Controller
 {
@@ -23,7 +22,7 @@ class SiteController extends Controller
     }
     public function rent()
     {
-        $houses_rent = House::where('status','Alugel')->get();
+        $houses_rent = House::where('status','Aluguel')->get();
         return view('site.rent', compact('houses_rent'));
     }
     public function contact()
@@ -42,5 +41,11 @@ class SiteController extends Controller
     public function about()
     {
         return view('site.about');
+    }
+    public function search(Request $request)
+    {
+        $houses_search = House::whereTypeAndStatus($request->type_house, $request->status_house)->get();
+        return view('site.view-list', compact('houses_search'));
+
     }
 }

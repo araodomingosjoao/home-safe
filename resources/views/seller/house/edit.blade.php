@@ -60,8 +60,8 @@
                             <select class="form-control" name="status_house" id="status_house"
                                 value="{{ $house->status_house }}">
                                 <option>Venda</option>
-                                <option>Alugel</option>
-                                <option>Venda e Alugel</option>
+                                <option>Aluguel</option>
+                                <option>Venda e Aluguel</option>
                             </select>
                         </div>
                         <div class="form-group col-lg-6 col-md-6">

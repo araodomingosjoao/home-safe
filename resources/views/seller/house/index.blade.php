@@ -43,7 +43,7 @@
                                 </div>
 
                                 <div class="col-md-6 col-lg-4 text-center border-bottom border-top py-3">
-                                    <span class="d-inline-block text-dark mb-0 caption-text">Preço de alugel</span>
+                                    <span class="d-inline-block text-dark mb-0 caption-text">Preço de Aluguel</span>
                                     <strong class="d-block">{{ $house->price_rent }} KZ</strong>
                                 </div>
                             </div>
@@ -112,11 +112,11 @@
                     <strong class="property-price text-primary d-block text-dark">{{ $house->price_sale }} KZ</strong>
                 @endif
 
-                @if ($house->status == 'Alugel')
+                @if ($house->status == 'Aluguel')
                     <strong class="property-price text-primary d-block text-dark">{{ $house->price_rent }} KZ</strong>
                 @endif
 
-                @if ($house->status == 'Venda e Alugel')
+                @if ($house->status == 'Venda e Aluguel')
                     <strong class="property-price text-primary d-block text-dark">{{ $house->price_sale }} KZ //
                         {{ $house->price_rent }} KZ</strong>
                 @endif
