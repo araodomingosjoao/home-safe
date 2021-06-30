@@ -206,7 +206,7 @@ $notifications = collect($notifications)->collapse()->take(5);
 
                     @if(!$notifications_count == '0')
                         @foreach ($notifications as $notification)
-                            <a class="dropdown-item d-flex align-items-center" data-toggle="modal" data-target="#description_client" href="#" onclick="getMessage('{{$notification->client->message}}')">
+                            <a class="dropdown-item d-flex align-items-center" data-toggle="modal" data-target="#description_client" href="#" onclick="setMessage('{{$notification->client->message}}')">
                                 <div class="dropdown-list-image mr-3">
                                     <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
                                     <div class="status-indicator bg-danger"></div>
@@ -233,7 +233,9 @@ $notifications = collect($notifications)->collapse()->take(5);
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p class="cliente_message"></p>
+                            <p class="cliente_message">
+                              
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -307,6 +309,7 @@ $notifications = collect($notifications)->collapse()->take(5);
     {{-- <script src="{{ asset('js/script.js')}}"></script>
     <script src="{{ asset('site/assets/js/script.js') }}"></script> --}}
     <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
+    <script src="{{ asset('js/script.js')}}"></script>
 </body>
 
 </html>

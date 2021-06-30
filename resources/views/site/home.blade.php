@@ -25,7 +25,7 @@
                 <div class="select-wrap">
                   <span class="icon icon-arrow_drop_down"></span>
                   <select name="status_house" id="offer-types" class="form-control d-block rounded-0">
-                    <option>Venda e Alugada</option>
+                    <option value="Venda e Alugel">Venda e Alugada</option>
                     <option>Venda</option>
                     <option>Aluguel</option>
                   </select>
@@ -81,7 +81,7 @@
                         <strong class="property-price text-primary d-block text-black">{{ $house->price_rent}} KZ</strong>
                     @endif
 
-                    @if($house->status == 'Venda e Aluguel')
+                    @if($house->status == 'Venda e Alugel')
                         <strong class="property-price text-primary d-block text-black">{{ $house->price_sale}} KZ // {{ $house->price_rent }} KZ</strong>
                     @endif
                     <span class="property-specs mb-4">Preço negociavel</span>

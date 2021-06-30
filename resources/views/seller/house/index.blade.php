@@ -116,7 +116,7 @@
                     <strong class="property-price text-primary d-block text-dark">{{ $house->price_rent }} KZ</strong>
                 @endif
 
-                @if ($house->status == 'Venda e Aluguel')
+                @if ($house->status == 'Venda e Alugel')
                     <strong class="property-price text-primary d-block text-dark">{{ $house->price_sale }} KZ //
                         {{ $house->price_rent }} KZ</strong>
                 @endif

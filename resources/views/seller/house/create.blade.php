@@ -73,6 +73,14 @@
                                 <label>Descrição da casa</label>
                                 <textarea class="form-control" name="description" cols="30" rows="5"></textarea>
                             </div>
+                            <div class="form-group col-lg-6 col-md-6">
+                                <label>Preço Negociavel</label>
+                                <div class="row form-group text">
+                                    <input type="radio" name="" class="">
+                                    <input type="radio" name="" class="">
+
+                                </div>
+                            </div>
                             <div class="form-group col-lg-6 col-md-6" id="rent">
                                 <label for="endereco">Preço de Aluguel </label>
                                 <input type="text" class="form-control" name="price_rent">
