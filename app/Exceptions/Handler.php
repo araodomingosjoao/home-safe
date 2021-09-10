@@ -32,7 +32,7 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return void
      */
-    public function report(Throwable; $exception)
+    public function report(Throwable $exception)
     {
         parent::report($exception);
     }
